@@ -4,7 +4,6 @@ cache:
  npm: false
   directories:
     - ./.yarn/cache
-before_install:
  before_install:
   - rm .yarnrc.yml
   - sudo apt-key adv --fetch-keys http://dl.yarnpkg.com/debian/pubkey.gpg
