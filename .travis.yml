@@ -1,15 +1,12 @@
-dist: jammy
 language: node_js
 cache:
- npm: false
+  npm: false
   directories:
     - ./.yarn/cache
- before_install:
-  - rm .yarnrc.yml
-  - sudo apt-key adv --fetch-keys http://dl.yarnpkg.com/debian/pubkey.gpg
-  - echo "deb http://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-  - sudo apt-get update -qq
-  - sudo apt-get install -y -qq yarn
-  - yarn set version berry
+
+before_install:
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
   - export PATH="$HOME/.yarn/bin:$PATH"
   - yarn -v
+
+install: yarn
